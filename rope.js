@@ -27,7 +27,7 @@ const tileCurve = (ctx, columnPosition, rowPosition, height, color) => {
   ctx.quadraticCurveTo(columnPosition + halfHeight, rowPosition -height,
                        columnPosition + height, rowPosition);
   ctx.lineTo(columnPosition + halfHeight, rowPosition + halfHeight);
-  ctx.quadraticCurveTo(columnPosition, rowPosition - 18,
+  ctx.quadraticCurveTo(columnPosition, rowPosition - 10,
      columnPosition - halfHeight, rowPosition - halfHeight);
   ctx.closePath();
   ctx.fillStyle = color;
