@@ -89,8 +89,8 @@ for (var y = 0, i=0; y < canvas.height + h; y += h, i++) {
     // Draw tile "3"
     console.log(x, y);
     // tile(ctx, x, y, h, i%2===0? 'blue': 'blue')
-    tileCurve(ctx, x, y, h, i%2===0? 'white': 'white')
-    tileReflective(ctx, x, y, h , i%2===0? 'white': 'white')
+    tileCurve(ctx, x, y, h, i%2===0? '#c0e3c0': '#c0e3c0')
+    tileReflective(ctx, x, y, h , i%2===0? '#e3cbc0': '#e3cbc0')
     // tileReflectiveCurve(ctx, x, y, h , i%2===0? 'green': 'yellow')
 
   }
