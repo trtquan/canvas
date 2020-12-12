@@ -149,10 +149,11 @@ canvas.addEventListener('mousedown', e=> {
   const {clientX , clientY} = e;
   console.log(clientX - react.left, clientY -react.top);
   // const p = minPointClicked( {x: clientX - react.left, y:clientY - react.top });
-  const p = {x: (clientX - react.left)%w, y:(clientY - react.top) %w };
+  // const p = {x: (clientX - react.left)%w, y:(clientY - react.top) %w };
+  const p = {x: (clientX- react.left), y:(clientY - react.top) };
   console.log(p);
   // const p = point();
-  console.log(p);
+  // console.log(p);
   const reg =(x, y) => ({
     A: {x: x -h2, y: y-h2},
     B: {x: x, y: y-h},
@@ -169,6 +170,15 @@ canvas.addEventListener('mousedown', e=> {
         tile(ctx, x, y, h, i%2===0? '#c0e3c0': '#c0e3c0')
         tileReflective(ctx, x, y, h , i%2===0? '#e3cbc0': '#e3cbc0')
       }
+    }
+  }
+
+  for (var y = canvas.height + h2, i=h; y > 0; y -= h, i--) {
+    for (var x = canvas.width + w - h2; x > 0; x -= w) {
+      if(isPointInRectangle(reg(x, y), p)) {
+        tile(ctx, x, y, h, 'red')
+        p.x-=w, p.y-=w;
+      } 
     }
   }
   
